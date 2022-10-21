@@ -3,6 +3,7 @@ const {
   getProducts,
   updateProduct,
   deleteProduct,
+  getProduct,
 } = require("../controllers/productControllers");
 
 const Router = require("express").Router();
@@ -15,12 +16,15 @@ Router.post("/products", createProduct);
 
 Router.get("/products", getProducts);
 
+// Get a single project
+Router.get("/products/:id", getProduct);
+
 // Update an Item in Db
 
-Router.put("/products:id", updateProduct);
+Router.put("/products/:id", updateProduct);
 
 // Delete an Item in Db
 
-Router.delete("/products:id", deleteProduct);
+Router.delete("/products/:id", deleteProduct);
 
 module.exports = Router;
